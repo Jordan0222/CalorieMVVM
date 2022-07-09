@@ -1,4 +1,4 @@
-package com.jordan.caloriemvvm.di
+package com.jordan.caloriemvvm.di.tracker
 
 import com.jordan.caloriemvvm.domain.preferences.Preferences
 import com.jordan.caloriemvvm.domain.repository.TrackerRepository

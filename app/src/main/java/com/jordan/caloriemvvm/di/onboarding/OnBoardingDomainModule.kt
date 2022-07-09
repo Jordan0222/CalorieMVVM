@@ -1,4 +1,4 @@
-package com.jordan.caloriemvvm.di
+package com.jordan.caloriemvvm.di.onboarding
 
 import com.jordan.caloriemvvm.domain.use_case.onboarding.ValidateNutrients
 import dagger.Module
