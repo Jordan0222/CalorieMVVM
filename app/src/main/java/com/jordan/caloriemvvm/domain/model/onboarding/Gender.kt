@@ -1,4 +1,4 @@
-package com.jordan.caloriemvvm.domain.model
+package com.jordan.caloriemvvm.domain.model.onboarding
 
 sealed class Gender(val name: String) {
     object Male: Gender("male")

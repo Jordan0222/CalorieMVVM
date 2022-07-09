@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jordan.caloriemvvm.domain.model.Gender
+import com.jordan.caloriemvvm.domain.model.onboarding.Gender
 import com.jordan.caloriemvvm.domain.preferences.Preferences
 import com.jordan.caloriemvvm.util.UiEvent
 import dagger.hilt.android.lifecycle.HiltViewModel

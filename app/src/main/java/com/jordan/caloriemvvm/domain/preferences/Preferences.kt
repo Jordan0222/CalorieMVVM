@@ -1,9 +1,9 @@
 package com.jordan.caloriemvvm.domain.preferences
 
-import com.jordan.caloriemvvm.domain.model.ActivityLevel
-import com.jordan.caloriemvvm.domain.model.Gender
-import com.jordan.caloriemvvm.domain.model.GoalType
-import com.jordan.caloriemvvm.domain.model.UserInfo
+import com.jordan.caloriemvvm.domain.model.onboarding.ActivityLevel
+import com.jordan.caloriemvvm.domain.model.onboarding.Gender
+import com.jordan.caloriemvvm.domain.model.onboarding.GoalType
+import com.jordan.caloriemvvm.domain.model.onboarding.UserInfo
 
 interface Preferences {
     fun saveGender(gender: Gender)

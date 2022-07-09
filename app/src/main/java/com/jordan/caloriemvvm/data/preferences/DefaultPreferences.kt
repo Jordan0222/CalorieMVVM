@@ -1,10 +1,10 @@
 package com.jordan.caloriemvvm.data.preferences
 
 import android.content.SharedPreferences
-import com.jordan.caloriemvvm.domain.model.ActivityLevel
-import com.jordan.caloriemvvm.domain.model.Gender
-import com.jordan.caloriemvvm.domain.model.GoalType
-import com.jordan.caloriemvvm.domain.model.UserInfo
+import com.jordan.caloriemvvm.domain.model.onboarding.ActivityLevel
+import com.jordan.caloriemvvm.domain.model.onboarding.Gender
+import com.jordan.caloriemvvm.domain.model.onboarding.GoalType
+import com.jordan.caloriemvvm.domain.model.onboarding.UserInfo
 import com.jordan.caloriemvvm.domain.preferences.Preferences
 import com.jordan.caloriemvvm.domain.preferences.Preferences.Companion.KEY_ACTIVITY_LEVEL
 import com.jordan.caloriemvvm.domain.preferences.Preferences.Companion.KEY_AGE

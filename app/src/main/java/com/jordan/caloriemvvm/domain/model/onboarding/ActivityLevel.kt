@@ -1,4 +1,4 @@
-package com.jordan.caloriemvvm.domain.model
+package com.jordan.caloriemvvm.domain.model.onboarding
 
 sealed class ActivityLevel(val name: String) {
     object Low: ActivityLevel("low")

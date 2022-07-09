@@ -11,7 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.jordan.caloriemvvm.R
-import com.jordan.caloriemvvm.domain.model.ActivityLevel
+import com.jordan.caloriemvvm.domain.model.onboarding.ActivityLevel
 import com.jordan.caloriemvvm.presentation.onboarding.components.ActionButton
 import com.jordan.caloriemvvm.presentation.onboarding.components.SelectableButton
 import com.jordan.caloriemvvm.util.LocalSpacing

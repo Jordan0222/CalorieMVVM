@@ -5,7 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jordan.caloriemvvm.domain.model.GoalType
+import com.jordan.caloriemvvm.domain.model.onboarding.GoalType
 import com.jordan.caloriemvvm.domain.preferences.Preferences
 import com.jordan.caloriemvvm.util.UiEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -25,7 +25,7 @@ class GoalViewModel @Inject constructor(
     private val _uiEvent = Channel<UiEvent>()
     val uiEvent = _uiEvent.receiveAsFlow()
 
-    fun onGoalTypeSelect(goalType:GoalType) {
+    fun onGoalTypeSelect(goalType: GoalType) {
         selectedGoal = goalType
     }
 

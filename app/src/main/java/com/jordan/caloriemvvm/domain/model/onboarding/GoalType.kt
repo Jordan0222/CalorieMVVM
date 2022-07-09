@@ -1,4 +1,4 @@
-package com.jordan.caloriemvvm.domain.model
+package com.jordan.caloriemvvm.domain.model.onboarding
 
 sealed class GoalType(val name: String) {
     object LoseWeight: GoalType("lose_weight")
