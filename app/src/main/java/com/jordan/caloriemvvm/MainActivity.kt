@@ -11,6 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.jordan.caloriemvvm.domain.preferences.Preferences
+import com.jordan.caloriemvvm.presentation.onboarding.activity.ActivityScreen
 import com.jordan.caloriemvvm.presentation.onboarding.age.AgeScreen
 import com.jordan.caloriemvvm.presentation.onboarding.gender.GenderScreen
 import com.jordan.caloriemvvm.presentation.onboarding.height.HeightScreen
@@ -79,6 +80,13 @@ class MainActivity : ComponentActivity() {
                                 scaffoldState = scaffoldState,
                                 onNextClick = {
                                     navController.navigate(Route.ACTIVITY)
+                                }
+                            )
+                        }
+                        composable(Route.ACTIVITY) {
+                            ActivityScreen(
+                                onNextClick = {
+                                    navController.navigate(Route.GOAL)
                                 }
                             )
                         }
