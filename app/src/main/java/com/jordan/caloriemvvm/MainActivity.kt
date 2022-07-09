@@ -13,6 +13,7 @@ import androidx.navigation.compose.rememberNavController
 import com.jordan.caloriemvvm.domain.preferences.Preferences
 import com.jordan.caloriemvvm.presentation.onboarding.age.AgeScreen
 import com.jordan.caloriemvvm.presentation.onboarding.gender.GenderScreen
+import com.jordan.caloriemvvm.presentation.onboarding.height.HeightScreen
 import com.jordan.caloriemvvm.presentation.onboarding.welcome.WelcomeScreen
 import com.jordan.caloriemvvm.ui.theme.CalorieMVVMTheme
 import com.jordan.caloriemvvm.util.navigation.Route
@@ -61,6 +62,14 @@ class MainActivity : ComponentActivity() {
                                 scaffoldState = scaffoldState,
                                 onNextClick = {
                                     navController.navigate(Route.HEIGHT)
+                                }
+                            )
+                        }
+                        composable(Route.HEIGHT) {
+                            HeightScreen(
+                                scaffoldState = scaffoldState,
+                                onNextClick = {
+                                    navController.navigate(Route.WEIGHT)
                                 }
                             )
                         }
