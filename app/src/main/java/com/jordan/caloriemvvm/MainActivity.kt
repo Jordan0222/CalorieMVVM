@@ -16,6 +16,7 @@ import com.jordan.caloriemvvm.presentation.onboarding.age.AgeScreen
 import com.jordan.caloriemvvm.presentation.onboarding.gender.GenderScreen
 import com.jordan.caloriemvvm.presentation.onboarding.goal.GoalScreen
 import com.jordan.caloriemvvm.presentation.onboarding.height.HeightScreen
+import com.jordan.caloriemvvm.presentation.onboarding.nutrient_goal.NutrientGoalScreen
 import com.jordan.caloriemvvm.presentation.onboarding.weight.WeightScreen
 import com.jordan.caloriemvvm.presentation.onboarding.welcome.WelcomeScreen
 import com.jordan.caloriemvvm.ui.theme.CalorieMVVMTheme
@@ -95,6 +96,14 @@ class MainActivity : ComponentActivity() {
                             GoalScreen(
                                 onNextClick = {
                                     navController.navigate(Route.NUTRIENT_GOAL)
+                                }
+                            )
+                        }
+                        composable(Route.NUTRIENT_GOAL) {
+                            NutrientGoalScreen(
+                                scaffoldState = scaffoldState,
+                                onNextClick = {
+                                    navController.navigate(Route.TRACKER_OVERVIEW)
                                 }
                             )
                         }
