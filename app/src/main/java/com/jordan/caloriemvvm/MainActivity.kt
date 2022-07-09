@@ -11,6 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.jordan.caloriemvvm.domain.preferences.Preferences
+import com.jordan.caloriemvvm.presentation.onboarding.age.AgeScreen
 import com.jordan.caloriemvvm.presentation.onboarding.gender.GenderScreen
 import com.jordan.caloriemvvm.presentation.onboarding.welcome.WelcomeScreen
 import com.jordan.caloriemvvm.ui.theme.CalorieMVVMTheme
@@ -52,6 +53,14 @@ class MainActivity : ComponentActivity() {
                             GenderScreen(
                                 onNextClick = {
                                     navController.navigate(Route.AGE)
+                                }
+                            )
+                        }
+                        composable(Route.AGE) {
+                            AgeScreen(
+                                scaffoldState = scaffoldState,
+                                onNextClick = {
+                                    navController.navigate(Route.HEIGHT)
                                 }
                             )
                         }
