@@ -14,6 +14,7 @@ import com.jordan.caloriemvvm.domain.preferences.Preferences
 import com.jordan.caloriemvvm.presentation.onboarding.activity.ActivityScreen
 import com.jordan.caloriemvvm.presentation.onboarding.age.AgeScreen
 import com.jordan.caloriemvvm.presentation.onboarding.gender.GenderScreen
+import com.jordan.caloriemvvm.presentation.onboarding.goal.GoalScreen
 import com.jordan.caloriemvvm.presentation.onboarding.height.HeightScreen
 import com.jordan.caloriemvvm.presentation.onboarding.weight.WeightScreen
 import com.jordan.caloriemvvm.presentation.onboarding.welcome.WelcomeScreen
@@ -87,6 +88,13 @@ class MainActivity : ComponentActivity() {
                             ActivityScreen(
                                 onNextClick = {
                                     navController.navigate(Route.GOAL)
+                                }
+                            )
+                        }
+                        composable(Route.GOAL) {
+                            GoalScreen(
+                                onNextClick = {
+                                    navController.navigate(Route.NUTRIENT_GOAL)
                                 }
                             )
                         }
