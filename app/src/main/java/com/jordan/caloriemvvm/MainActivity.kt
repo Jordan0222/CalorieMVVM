@@ -19,6 +19,7 @@ import com.jordan.caloriemvvm.presentation.onboarding.height.HeightScreen
 import com.jordan.caloriemvvm.presentation.onboarding.nutrient_goal.NutrientGoalScreen
 import com.jordan.caloriemvvm.presentation.onboarding.weight.WeightScreen
 import com.jordan.caloriemvvm.presentation.onboarding.welcome.WelcomeScreen
+import com.jordan.caloriemvvm.presentation.tracker.tracker_overview.TrackerOverviewScreen
 import com.jordan.caloriemvvm.ui.theme.CalorieMVVMTheme
 import com.jordan.caloriemvvm.util.navigation.Route
 import dagger.hilt.android.AndroidEntryPoint
@@ -104,6 +105,18 @@ class MainActivity : ComponentActivity() {
                                 scaffoldState = scaffoldState,
                                 onNextClick = {
                                     navController.navigate(Route.TRACKER_OVERVIEW)
+                                }
+                            )
+                        }
+                        composable(Route.TRACKER_OVERVIEW) {
+                            TrackerOverviewScreen(
+                                onNavigateToSearch = { mealName, dayOfMonth, month, year ->
+                                    navController.navigate(
+                                        Route.SEARCH + "/$mealName" +
+                                                "/$dayOfMonth" +
+                                                "/$month" +
+                                                "/$year"
+                                    )
                                 }
                             )
                         }
