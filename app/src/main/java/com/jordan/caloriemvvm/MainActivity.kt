@@ -6,10 +6,13 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Scaffold
 import androidx.compose.material.rememberScaffoldState
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.jordan.caloriemvvm.domain.preferences.Preferences
 import com.jordan.caloriemvvm.presentation.onboarding.activity.ActivityScreen
 import com.jordan.caloriemvvm.presentation.onboarding.age.AgeScreen
@@ -19,12 +22,14 @@ import com.jordan.caloriemvvm.presentation.onboarding.height.HeightScreen
 import com.jordan.caloriemvvm.presentation.onboarding.nutrient_goal.NutrientGoalScreen
 import com.jordan.caloriemvvm.presentation.onboarding.weight.WeightScreen
 import com.jordan.caloriemvvm.presentation.onboarding.welcome.WelcomeScreen
+import com.jordan.caloriemvvm.presentation.tracker.search.SearchScreen
 import com.jordan.caloriemvvm.presentation.tracker.tracker_overview.TrackerOverviewScreen
 import com.jordan.caloriemvvm.ui.theme.CalorieMVVMTheme
 import com.jordan.caloriemvvm.util.navigation.Route
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+@ExperimentalComposeUiApi
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
@@ -117,6 +122,38 @@ class MainActivity : ComponentActivity() {
                                                 "/$month" +
                                                 "/$year"
                                     )
+                                }
+                            )
+                        }
+                        composable(
+                            Route.SEARCH + "/{mealName}/{dayOfMonth}/{month}/{year}",
+                            arguments = listOf(
+                                navArgument("mealName") {
+                                    type = NavType.StringType
+                                },
+                                navArgument("dayOfMonth") {
+                                    type = NavType.IntType
+                                },
+                                navArgument("month") {
+                                    type = NavType.IntType
+                                },
+                                navArgument("year") {
+                                    type = NavType.IntType
+                                }
+                            )
+                        ) {
+                            val mealName = it.arguments?.getString("mealName") ?: "empty"
+                            val dayOfMonth = it.arguments?.getInt("dayOfMonth") ?: -1
+                            val month = it.arguments?.getInt("month") ?: -1
+                            val year = it.arguments?.getInt("year") ?: -1
+                            SearchScreen(
+                                scaffoldState = scaffoldState,
+                                mealName = mealName,
+                                dayOfMonth = dayOfMonth,
+                                month = month,
+                                year = year,
+                                onNavigateUp = {
+                                    navController.navigateUp()
                                 }
                             )
                         }
